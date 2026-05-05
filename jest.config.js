@@ -13,4 +13,5 @@ export default {
         // Strip .js extensions from imports so Jest resolves .ts source files
         "^(\\.{1,2}/.*)\\.js$": "$1",
     },
+    verbose: true,
 };
