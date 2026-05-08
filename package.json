@@ -13,7 +13,7 @@
     "scripts": {
         "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand",
         "test:watch": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch --runInBand",
-        "dev": "tsx watch src/server.ts",
+        "dev": "cross-env NODE_ENV=DEV tsx watch src/server.ts",
         "build": "tsc -p tsconfig.build.json",
         "format:fix": "prettier . --write",
         "format:check": "prettier . --check",
@@ -29,6 +29,7 @@
         "@types/node": "^25.6.0",
         "@types/supertest": "^7.2.0",
         "@types/winston": "^2.4.4",
+        "cross-env": "^10.1.0",
         "eslint": "^10.2.1",
         "globals": "^17.5.0",
         "husky": "^9.1.7",
@@ -50,7 +51,10 @@
         "dotenv": "^17.4.2",
         "express": "^5.2.1",
         "http-errors": "^2.0.1",
+        "pg": "^8.20.0",
+        "reflect-metadata": "^0.2.2",
         "supertest": "^7.2.2",
+        "typeorm": "^0.3.28",
         "winston": "^3.19.0"
     }
 }

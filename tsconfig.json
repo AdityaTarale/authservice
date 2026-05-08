@@ -9,13 +9,21 @@
         "module": "nodenext",
         "target": "esnext",
         // For nodejs:
-        "lib": ["esnext"],
-        "types": ["node", "jest"],
+        "lib": [
+            "esnext"
+        ],
+        "types": [
+            "node",
+            "jest"
+        ],
         // and npm install -D @types/node
         // Other Outputs
         "sourceMap": true,
         "declaration": true,
         "declarationMap": true,
+        // Decorator Support (required for TypeORM)
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         // Stricter Typechecking Options
         "noUncheckedIndexedAccess": true,
         "exactOptionalPropertyTypes": true,
@@ -37,5 +45,10 @@
         "allowJs": true,
         "checkJs": true
     },
-    "include": ["src", "tests", "eslint.config.mjs", "jest.config.js"]
+    "include": [
+        "src",
+        "tests",
+        "eslint.config.mjs",
+        "jest.config.js"
+    ]
 }
