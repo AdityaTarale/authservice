@@ -73,9 +73,7 @@ describe("POST /auth/register", () => {
             };
 
             // Act
-            // const response = await request(app)
-            //     .post("/auth/register")
-            //     .send(userData);
+            await request(app).post("/auth/register").send(userData);
 
             // Assert
 
@@ -84,6 +82,10 @@ describe("POST /auth/register", () => {
             const users = await userRepository.find();
 
             expect(users).toHaveLength(1);
+
+            expect(users[0]?.firstName).toBe(userData.firstName);
+            expect(users[0]?.lastName).toBe(userData.lastName);
+            expect(users[0]?.email).toBe(userData.email);
         });
     });
 
